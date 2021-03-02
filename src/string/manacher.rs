@@ -51,13 +51,13 @@ pub fn manacher(s: String) -> String {
         // If it's copied from left side and more than 1,
         // it means it's ensured so you don't need to check inside radius.
         let mut radius: usize = (length_of_palindrome[i] - 1) / 2;
-        radius = radius + 1;
+        radius += 1;
         // 2: Checking palindrome.
         // Need to care about overflow usize.
         while i >= radius && i + radius <= chars.len() - 1 && chars[i - radius] == chars[i + radius]
         {
-            length_of_palindrome[i] = length_of_palindrome[i] + 2;
-            radius = radius + 1;
+            length_of_palindrome[i] += 2;
+            radius += 1;
         }
     }
 
@@ -70,7 +70,7 @@ pub fn manacher(s: String) -> String {
         .unwrap();
     let radius_of_max = (length_of_palindrome[center_of_max] - 1) / 2;
     let answer = &chars[(center_of_max - radius_of_max)..(center_of_max + radius_of_max + 1)]
-        .into_iter()
+        .iter()
         .collect::<String>();
     answer.replace("#", "")
 }
