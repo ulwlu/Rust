@@ -9,3 +9,12 @@ __Properties__
 * Case space complexity  O(w)
 
 [kmp-wiki]: https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm
+
+### [Manacher](./manacher.rs)
+From [Wikipedia][manacher-wiki]: find a longest palindrome in a string in linear time.
+
+__Properties__
+* Case performance  O(n)
+* Case space complexity  O(n)
+
+[manacher-wiki]: https://en.wikipedia.org/wiki/Longest_palindromic_substring#Manacher's_algorithm
